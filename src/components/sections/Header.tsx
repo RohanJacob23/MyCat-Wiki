@@ -3,8 +3,8 @@ import React from "react";
 
 export default function Header() {
   return (
-    <section>
-      <div className="relative w-32 h-11 mt-6 md:mt-7">
+    <section className="pt-6 md:pt-7">
+      <div className="relative w-32 h-11">
         <Image src="/logo/CatwikiLogo.svg" alt="cat-logo" fill />
       </div>
     </section>

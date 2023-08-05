@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer({ font }: { font: string }) {
   return (
-    <section className="flex flex-col md:flex-row md:items-center justify-between text-white bg-black rounded-t-[2.625rem] p-7 pr-4 md:py-7 md:px-0">
+    <section className="flex flex-col md:flex-row md:items-center justify-between text-white bg-black rounded-t-[2.625rem] p-7 pr-4 md:px-0">
       <div className="flex items-center space-x-2 md:ml-[6.75rem]">
         <h1 className={`${font} text-sm md:text-2xl font-normal`}>CatWiki</h1>
 
