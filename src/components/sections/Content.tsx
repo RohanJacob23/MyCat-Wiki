@@ -1,5 +1,6 @@
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Content() {
@@ -15,10 +16,13 @@ export default function Content() {
           chemicals in your body which lower your stress and anxiety leves
         </p>
 
-        <div className="flex items-center opacity-60 space-x-1.5 cursor-pointer">
-          <p className="font-bold text-xs md:text-lg">READ MORE</p>
+        <Link
+          href="https://freshpet.com/blog/10-reasons-why-cats-make-great-pets"
+          className="flex items-center opacity-60 space-x-1.5 cursor-pointer"
+        >
+          <span className="font-bold text-xs md:text-lg">READ MORE</span>
           <ArrowRightIcon className="w-5 h-5 md:w-6 md:h-6 text-[#291507]" />
-        </div>
+        </Link>
       </div>
 
       {/* image grid */}

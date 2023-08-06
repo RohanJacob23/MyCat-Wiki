@@ -128,10 +128,13 @@ export default function Hero({
             66+ Breeds For you to discover
           </h1>
 
-          <div className="hidden md:flex items-center opacity-60 space-x-1.5 cursor-pointer">
-            <p className="font-bold text-lg">SEE MORE</p>
+          <Link
+            href="/top"
+            className="hidden md:flex items-center opacity-60 space-x-1.5 cursor-pointer"
+          >
+            <span className="font-bold text-lg">SEE MORE</span>
             <ArrowRightIcon className="w-6 h-6 text-[#291507]" />
-          </div>
+          </Link>
         </div>
 
         {/* top cat image grid */}
