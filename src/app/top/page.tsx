@@ -1,3 +1,4 @@
+import TopCats from "@/components/TopCats";
 import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";
 import { Images } from "@/types/types";
@@ -69,7 +70,6 @@ export default async function page() {
   const cartreux = await fetchCartreuxCatImage();
   const khaoManee = await fetchKhaoManeeCatImage();
   const allImages = [...bengal, ...cartreux, ...khaoManee];
-  console.log(allImages);
   return (
     <main className="flex flex-col px-5 md:px-24 min-h-screen">
       <Header />
@@ -80,69 +80,15 @@ export default async function page() {
         </h1>
 
         <div className="flex flex-col space-y-14 mt-14 mb-24">
-          {allImages.map((cat) => (
-            <div
-              key={cat.id}
-              className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-11"
-            >
-              <Image
-                src={cat.url}
-                alt="cat-image"
-                width={400}
-                height={400}
-                className="w-40 h-40 rounded-3xl object-cover"
-              />
-
-              <div className="flex flex-col space-y-4 md:space-y-6">
-                <h1 className="text-2xl md:text-4xl font-semibold">
-                  {cat.breeds[0].name}
-                </h1>
-                <p className="font-medium text-lg">
-                  {cat.breeds[0].description}
-                </p>
-              </div>
-            </div>
+          {allImages.map(({ id, url, breeds }) => (
+            <TopCats
+              key={id}
+              description={breeds[0].description}
+              id={id}
+              url={url}
+              name={breeds[0].name}
+            />
           ))}
-
-          {/* <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-11">
-            <Image
-              src="/cat-images/image1.png"
-              alt="cat-image"
-              width={400}
-              height={400}
-              className="w-40 h-40 rounded-3xl object-cover"
-            />
-
-            <div className="flex flex-col space-y-4 md:space-y-6">
-              <h1 className="text-2xl md:text-4xl font-semibold">Bengal</h1>
-              <p className="font-medium text-lg">
-                Bengals are a lot of fun to live with, but they're definitely
-                not the cat for everyone, or for first-time cat owners.
-                Extremely intelligent, curious and active, they demand a lot of
-                interaction and woe betide the owner who doesn't provide it.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-11">
-            <Image
-              src="/cat-images/image1.png"
-              alt="cat-image"
-              width={400}
-              height={400}
-              className="w-40 h-40 rounded-3xl object-cover"
-            />
-
-            <div className="flex flex-col space-y-4 md:space-y-6">
-              <h1 className="text-2xl md:text-4xl font-semibold">Bengal</h1>
-              <p className="font-medium text-lg">
-                Bengals are a lot of fun to live with, but they're definitely
-                not the cat for everyone, or for first-time cat owners.
-                Extremely intelligent, curious and active, they demand a lot of
-                interaction and woe betide the owner who doesn't provide it.
-              </p>
-            </div>
-          </div> */}
         </div>
       </section>
 
